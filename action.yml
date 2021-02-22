@@ -1,5 +1,5 @@
 name: 'json-to-sarif-actions'
-description: 'Greet someone and record the time'
+description: 'json-to-sarif-actions'
 inputs:
   json_file:  # id of input
     description: 'json_file path'
