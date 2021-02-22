@@ -1,17 +1,15 @@
 name: 'json-to-sarif-actions'
 description: 'Greet someone and record the time'
 inputs:
-  who:  # id of input
-    description: 'Who to greet'
+  json_file:  # id of input
+    description: 'json_file path'
     required: true
-    default: 'World'
+    default: 'license-go.json'
 outputs:
-  time: # id of output
-    description: 'The time we greeted you'
-  teststr: # id of output
-    description: 'The teststr '
+  result_str: # id of output
+    description: 'The result_str '
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.who }}
+    - ${{ inputs.json_file }}
