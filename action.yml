@@ -1,0 +1,17 @@
+name: 'json-to-sarif-actions'
+description: 'Greet someone and record the time'
+inputs:
+  who:  # id of input
+    description: 'Who to greet'
+    required: true
+    default: 'World'
+outputs:
+  time: # id of output
+    description: 'The time we greeted you'
+  teststr: # id of output
+    description: 'The teststr '
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.who }}
