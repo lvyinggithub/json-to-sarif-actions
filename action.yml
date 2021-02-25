@@ -1,14 +1,14 @@
 name: 'json-to-sarif-actions'
 description: 'json-to-sarif-actions'
 inputs:
-  json_file:  # id of input
-    description: 'json_file path'
-    required: true
-    default: 'license-go.json'
   name:  # id of input
     description: 'name'
     required: true
     default: 'TUT1001'
+  json_file:  # id of input
+    description: 'json_file path'
+    required: true
+    default: 'license-go.json'
 outputs:
   result_str: # id of output
     description: 'The result_str '
