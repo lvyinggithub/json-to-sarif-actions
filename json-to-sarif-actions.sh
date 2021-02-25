@@ -1,7 +1,7 @@
 #!/bin/bash
 name=$1
 json_file_path=$2
-licens_sarif_name=$3
+licens_sarif_path=$3
 
 head=""
 #json_str="111111111111.\n 22222.\n 444.\n"
@@ -14,7 +14,7 @@ json_str=$(cat ${json_file_path} | sed 's/[[:space:]]//g' | sed 's/"/\\"/g' )
 echo -e $json_str
 
 #head='{ "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json", "version": "2.1.0", "properties": { "comment": "This sample demonstrates the use of default rule configuration." }, "runs": [ { "tool": { "driver": { "name": "SarifSamples", "version": "1.0", "rules": [ { "id": "TUT0001", "defaultConfiguration": { "level": "warning", "properties": { "comment": "'"'warning' is the default, so this can be omitted.\" } } } ] } }, \"results\": [ { \"ruleId\": \"TUT1001\", \"ruleIndex\": 0, \"message\": { \"text\": \"${json_str}\" }, \"locations\": [ { \"physicalLocation\": { \"artifactLocation\": { \"uri\": \"licens.sarif\" } } } ] } ], \"columnKind\": \"utf16CodeUnits\" } ] }"
-head='{ "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json", "version": "2.1.0", "properties": { "comment": "This sample demonstrates the use of default rule configuration." }, "runs": [ { "tool": { "driver": { "name": \"${alert_name}\", "version": "1.0", "rules": [ { "id": "TUT0001", "defaultConfiguration": { "level": "warning", "properties": { "comment": "'"'warning' is the default, so this can be omitted.\" } } } ] } }, \"results\": [ { \"ruleId\": \"TUT1001\", \"ruleIndex\": 0, \"message\": { \"text\": \"${json_str}\" }, \"locations\": [ { \"physicalLocation\": { \"artifactLocation\": { \"uri\": \"${licens_sarif_name}\" } } } ] } ], \"columnKind\": \"utf16CodeUnits\" } ] }"
+head='{ "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json", "version": "2.1.0", "properties": { "comment": "This sample demonstrates the use of default rule configuration." }, "runs": [ { "tool": { "driver": { "name": \"${alert_name}\", "version": "1.0", "rules": [ { "id": "TUT0001", "defaultConfiguration": { "level": "warning", "properties": { "comment": "'"'warning' is the default, so this can be omitted.\" } } } ] } }, \"results\": [ { \"ruleId\": \"TUT1001\", \"ruleIndex\": 0, \"message\": { \"text\": \"${json_str}\" }, \"locations\": [ { \"physicalLocation\": { \"artifactLocation\": { \"uri\": \"${licens_sarif_path}\" } } } ] } ], \"columnKind\": \"utf16CodeUnits\" } ] }"
 
 #echo  $head | sed 's/} {/}\\n{/g'>1.sarif
-echo  $head | sed 's/} {/}\\n{/g'>${licens_sarif_name}
+echo  $head | sed 's/} {/}\\n{/g'>${licens_sarif_path}
