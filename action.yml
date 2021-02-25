@@ -2,18 +2,22 @@ name: 'json-to-sarif-actions'
 description: 'json-to-sarif-actions'
 inputs:
   name:  # id of input
-    description: 'name'
+    description: 'aler_name'
     required: true
-    default: 'TUT1001'
+    default: 'dep-scan'
   json_file:  # id of input
     description: 'json_file path'
     required: true
     default: 'license-go.json'
+  licens_sarif:  # id of input
+    description: 'licens_sarif path'
+    required: true
+    default: '1.sarif'
 outputs:
   result_str: # id of output
     description: 'The result_str '
 runs:
   using: "composite"
   steps: 
-    - run: chmod +x ${{ github.action_path }}/json-to-sarif-actions.sh;${{ github.action_path }}/json-to-sarif-actions.sh ${{ inputs.name }} ${{ inputs.json_file }} 
+    - run: chmod +x ${{ github.action_path }}/json-to-sarif-actions.sh;${{ github.action_path }}/json-to-sarif-actions.sh ${{ inputs.name }} ${{ inputs.json_file }} ${{ inputs.licens_sarif }}
       shell: bash
