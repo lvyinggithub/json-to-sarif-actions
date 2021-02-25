@@ -34,7 +34,7 @@ jobs:
         with:
           name: "dep-scan"
           json_file_path: ./license-go.json
-          licens_sarif_name: "1.sarif"
+          licens_sarif_path: "./1.sarif"
       - name: cat ./1.sarif
         run: cat ./1.sarif
       - name: upload Anchore scan SARIF report
