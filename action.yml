@@ -5,11 +5,15 @@ inputs:
     description: 'json_file path'
     required: true
     default: 'license-go.json'
+  name:  # id of input
+    description: 'name'
+    required: true
+    default: 'license-go.json'
 outputs:
   result_str: # id of output
     description: 'The result_str '
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  args:
-    - ${{ inputs.json_file }}
+  using: "composite"
+  steps: 
+    - run: ${{ github.action_path }}/json-to-sarif-actions.sh ${{ inputs.name }} ${{ inputs.json_file }} 
+      shell: bash
