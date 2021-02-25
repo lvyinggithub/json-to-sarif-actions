@@ -5,12 +5,12 @@ inputs:
     description: 'aler_name'
     required: true
     default: 'dep-scan'
-  json_file:  # id of input
-    description: 'json_file path'
+  json_file_path:  # id of input
+    description: 'json_file_path path'
     required: true
     default: 'license-go.json'
-  licens_sarif:  # id of input
-    description: 'licens_sarif path'
+  licens_sarif_name:  # id of input
+    description: 'licens_sarif name'
     required: true
     default: '1.sarif'
 outputs:
@@ -19,5 +19,5 @@ outputs:
 runs:
   using: "composite"
   steps: 
-    - run: chmod +x ${{ github.action_path }}/json-to-sarif-actions.sh;${{ github.action_path }}/json-to-sarif-actions.sh ${{ inputs.name }} ${{ inputs.json_file }} ${{ inputs.licens_sarif }}
+    - run: chmod +x ${{ github.action_path }}/json-to-sarif-actions.sh;${{ github.action_path }}/json-to-sarif-actions.sh ${{ inputs.name }} ${{ inputs.json_file_path }} ${{ inputs.licens_sarif_name }}
       shell: bash
