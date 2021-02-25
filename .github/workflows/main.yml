@@ -27,7 +27,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: sh 1.sh
+        run: sh json-to-sarif-actions.sh
       - name: ls
         run: ls -l
       - name: cat
