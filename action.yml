@@ -1,10 +1,7 @@
 name: 'json-to-sarif-actions'
 description: 'json-to-sarif-actions'
 inputs:
-  name:  # id of input
-    description: 'aler_name'
-    required: true
-    default: 'dep-scan'
+
   json_file_path:  # id of input
     description: 'json_file_path path'
     required: true
@@ -19,5 +16,5 @@ outputs:
 runs:
   using: "composite"
   steps: 
-    - run: chmod +x ${{ github.action_path }}/json-to-sarif-actions.sh;${{ github.action_path }}/json-to-sarif-actions.sh ${{ inputs.name }} ${{ inputs.json_file_path }} ${{ inputs.licens_sarif_name }}
+    - run: chmod +x ${{ github.action_path }}/json-to-sarif-actions.sh;${{ github.action_path }}/json-to-sarif-actions.sh  ${{ inputs.json_file_path }} ${{ inputs.licens_sarif_name }}
       shell: bash
