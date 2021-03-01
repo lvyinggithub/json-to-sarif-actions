@@ -29,10 +29,10 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, world!
       #lvyinggithub/json-to-sarif-actions@master
+      #          name: "dep-scan"       
       - name: create sarif file
         uses: ./
         with:
-          name: "dep-scan"
           json_file_path: "./license-go.json"
           licens_sarif_path: "./1.sarif"
       - name: cat sarif
