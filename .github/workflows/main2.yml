@@ -31,7 +31,7 @@ jobs:
       #lvyinggithub/json-to-sarif-actions@master ./
       #          name: "dep-scan"       
       - name: create sarif file
-        uses: lvyinggithub/json-to-sarif-actions@master
+        uses: lvyinggithub/json-to-sarif-actions@main
         with:
           json_file_path: "./license-go.json"
           licens_sarif_path: "./1.sarif"
