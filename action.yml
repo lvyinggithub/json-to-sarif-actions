@@ -5,11 +5,11 @@ inputs:
   json_file_path:  # id of input
     description: 'json_file_path path'
     required: true
-    default: 'license-go.json'
+    default: './license-go.json'
   licens_sarif_name:  # id of input
     description: 'licens_sarif name'
     required: true
-    default: '1.sarif'
+    default: './1.sarif'
 outputs:
   result_str: # id of output
     description: 'The result_str '
