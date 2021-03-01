@@ -33,7 +33,7 @@ jobs:
         uses: ./
         with:
           name: "dep-scan"
-          json_file_path: ./license-go.json
+          json_file_path: "./license-go.json"
           licens_sarif_path: "./1.sarif"
       - name: cat sarif
         run: cat ./1.sarif
