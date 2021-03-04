@@ -37,7 +37,7 @@ jobs:
           licens_sarif_path: "./1.sarif"
       - name: cat sarif
         run: cat ./1.sarif
-      - name: upload Anchore scan SARIF report
+      - name: upload  scan SARIF report
         uses: github/codeql-action/upload-sarif@v1
         with:
           sarif_file: ./1.sarif
