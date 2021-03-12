@@ -14,16 +14,15 @@
             {
               "id": "dep-scan-1",
               "shortDescription": {
-                "text": "dep scan"
+                "text": "This is the scan result of the dep-san"
               },
               "fullDescription": {
-                "text": "dep scan"
+                "text": "This is the scan result of the dep-san"
               },
               "help": {
 
-
-                "text": "dep-scan\nPackage: Package-string\nVersion: Version-string\nLicense Id: License Id string\nLicense conditions: License conditions string\n",
-                "markdown": "**dep-scan**\n| Package | Version | License Id | License conditions | \n| --- | --- | --- | --- | \n|Package-string|Version-string|License Id string|License conditions string|\n"
+                "text": "dep-scan-results\nPackage: Package-string\nVersion: Version-string\nLicense Id: License Id string\nLicense conditions: License conditions string\n",
+                "markdown": "**dep-scan-results**\n| Package | Version | License Id | License conditions | \n| --- | --- | --- | --- | \n|Package-string|Version-string|License Id string|License conditions string|\n"
               }
             }
           ]
