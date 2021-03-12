@@ -20,8 +20,10 @@
                 "text": "dep scan"
               },
               "help": {
+
+
                 "text": "dep-scan\nPackage: Package-string\nVersion: Version-string\nLicense Id: License Id string\nLicense conditions: License conditions string\n",
-                "markdown": "**dep-scan**\n| Package | Version | License Id | License conditions | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n|Package-string|Version-string|License Id string|License conditions string|\n"
+                "markdown": "**dep-scan**\n| Package | Version | License Id | License conditions | \n| --- | --- | --- | --- | \n|Package-string|Version-string|License Id string|License conditions string|\n"
               }
             }
           ]
