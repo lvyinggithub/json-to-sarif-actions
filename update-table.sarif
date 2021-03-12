@@ -14,10 +14,10 @@
             {
               "id": "dep-scan-1",
               "shortDescription": {
-                "text": "This is the scan result of the dep-san"
+                "text": "dep-san title"
               },
               "fullDescription": {
-                "text": "This is the scan result of the dep-san"
+                "text": "dep-san title"
               },
               "help": {
 
