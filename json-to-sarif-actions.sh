@@ -60,8 +60,12 @@ do
   
   #tiele+="\n|" $line_1_head | $line_2_head | $line_3_head | $line_4_head "| \n|"
   #content+= "\n|"$line_1_body"|"$line_2_body"|"$line_3_body"|"$line_4_body"\n|"
-  tiele= "$line_1_head" "|" "$line_2_head" "|" "$line_3_head" "|" "$line_4_head"$tiele
-  content="$line_1_body" "|" "$line_2_body" "|" "$line_3_body" "|" "$line_4_body"$content
+  #tiele= "$line_1_head" "|" "$line_2_head" "|" "$line_3_head" "|" "$line_4_head"$tiele
+  #content="$line_1_body" "|" "$line_2_body" "|" "$line_3_body" "|" "$line_4_body"$content
+  tiele="Package | Version | License Id | License conditions |"
+  content="Package-string|Version-string|License Id string|License conditions string"
+  #tiele= "$line_1_head" "|" "$line_2_head" "|" "$line_3_head" "|" "$line_4_head"$tiele
+  #content="$line_1_body" "|" "$line_2_body" "|" "$line_3_body" "|" "$line_4_body"$content
 done
 
 echo "tiele"$tiele
