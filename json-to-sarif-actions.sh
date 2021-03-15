@@ -1,7 +1,7 @@
 #!/bin/bash
 #name=$1
 #yum install -y  jq
-sudo apt-get -y install jq
+#sudo apt-get -y install jq
 json_file_path=$1
 licens_sarif_path=$2
 
@@ -18,14 +18,36 @@ content=""
 cat $json_file_path | while read line || [[ -n ${line} ]];
 do
 
+  # line=$line | sed 's/[[:space:]]//g' 
+  # echo "line"$line
+  # Package_line=$line| jq '.Package'
+  # Version_line=$line| jq '.Version'
+  # License_Id_line=$line| jq '.License Id'
+  # License_conditions_line=$line| jq '.License conditions'
+  # content+= "\n|"$Package_line"|"$Version_line"|"$License_Id_line"|"$License_conditions_line"\n|"
+  # echo "content:"$content
+
+
   line=$line | sed 's/[[:space:]]//g' 
-  echo "line"$line
-  Package_line=$line| jq '.Package'
-  Version_line=$line| jq '.Version'
-  License_Id_line=$line| jq '.License Id'
-  License_conditions_line=$line| jq '.License conditions'
-  content+= "\n|"$Package_line"|"$Version_line"|"$License_Id_line"|"$License_conditions_line"\n|"
-  echo "content:"$content
+  line_1=$line | awk -F',' '{print $1}')"
+  line_1_head=$line_1 | awk -F':' '{print $1}')"
+  line_1_body=$line_1 | awk -F':' '{print $2}')"
+  echo $line_1_head $line_1_body
+  
+  line_2=$line | awk -F',' '{print $2}')"
+  line_2_head=$line_2 | awk -F':' '{print $1}')"
+  line_2_body=$line_2 | awk -F':' '{print $2}')"
+  echo $line_2_head $line_2_body
+  
+  line_3=$line | awk -F',' '{print $3}')"
+  line_3_head=$line_3 | awk -F':' '{print $1}')"
+  line_3_body=$line_3 | awk -F':' '{print $2}')"
+  echo $line_3_head $line_3_body
+  
+  line_4=$line | awk -F',' '{print $4}')"
+  line_4_head=$line_4 | awk -F':' '{print $1}')"
+  line_4_body=$line_4 | awk -F':' '{print $2}')"
+  echo $line_4_head $line_4_body
 
 done
 
