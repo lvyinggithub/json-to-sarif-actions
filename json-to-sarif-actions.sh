@@ -1,7 +1,7 @@
 #!/bin/bash
 #name=$1
 #yum install -y  jq
-apt-get -y install jq
+sudo apt-get -y install jq
 json_file_path=$1
 licens_sarif_path=$2
 
