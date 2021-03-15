@@ -26,8 +26,8 @@ jobs:
       - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+      - name: Run python -v
+        run: python -v
       #lvyinggithub/json-to-sarif-actions@master ./
       #          name: "dep-scan"       
       - name: create sarif file
