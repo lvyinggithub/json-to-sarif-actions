@@ -39,12 +39,12 @@ do
   line_2_body=$line_2 | awk -F':' '{print $2}'
   echo $line_2_head $line_2_body
   
-  line_3=$line | awk -F',' '{print $3}')"
+  line_3=$line | awk -F',' '{print $3}'
   line_3_head=$line_3 | awk -F':' '{print $1}'
   line_3_body=$line_3 | awk -F':' '{print $2}'
   echo $line_3_head $line_3_body
   
-  line_4=$line | awk -F',' '{print $4}')"
+  line_4=$line | awk -F',' '{print $4}'
   line_4_head=$line_4 | awk -F':' '{print $1}'
   line_4_body=$line_4 | awk -F':' '{print $2}'
   echo $line_4_head $line_4_body
