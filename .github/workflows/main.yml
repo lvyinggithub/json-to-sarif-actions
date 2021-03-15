@@ -34,4 +34,5 @@ jobs:
         uses: github/codeql-action/upload-sarif@v1
         with:
           #sarif_file: ./test-table.sarif
-          sarif_file: ./update-table.sarif
+          #sarif_file: ./update-table.sarif
+          sarif_file: ./test-table-2.sarif
