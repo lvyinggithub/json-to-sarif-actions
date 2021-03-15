@@ -11,7 +11,7 @@ head=""
 #json_file_path=$(cat license-go.json | sed 's/[[:space:]]//g' | sed 's/"/\\"/g' ) 
 
 json_str=$(cat ${json_file_path} | sed 's/[[:space:]]//g' | sed 's/"/\\"/g' ) 
-echo -e $json_str
+#echo -e $json_str
 
 content=""
 
@@ -27,8 +27,9 @@ do
   # content+= "\n|"$Package_line"|"$Version_line"|"$License_Id_line"|"$License_conditions_line"\n|"
   # echo "content:"$content
 
-
+  
   line=$line | sed 's/[[:space:]]//g' 
+  echo $line 
   line_1=$line | awk -F',' '{print $1}'
   echo $line_1 
   
