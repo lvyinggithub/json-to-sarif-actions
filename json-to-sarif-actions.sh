@@ -28,30 +28,30 @@ do
   # echo "content:"$content
 
   
-  line=$line | sed 's/[[:space:]]//g' 
+  line=echo $line | sed 's/[[:space:]]//g' | sed 's/{//g' |  sed 's/}//g'
   echo $line 
-  line_1=$line | awk -F',' '{print $1}'
+  line_1=echo $line | awk -F',' '{print $1}'
   echo $line_1 
   
-  line_1_head=$line_1 | awk -F':' '{print $1}'
-  line_1_body=$line_1 | awk -F':' '{print $2}'
+  line_1_head=echo $line_1 | awk -F':' '{print $1}'
+  line_1_body=echo $line_1 | awk -F':' '{print $2}'
   echo $line_1_head $line_1_body
   
-  line_2=$line | awk -F',' '{print $2}'
-  line_2_head=$line_2 | awk -F':' '{print $1}'
-  line_2_body=$line_2 | awk -F':' '{print $2}'
+  line_2=echo $line | awk -F',' '{print $2}'
+  line_2_head=echo $line_2 | awk -F':' '{print $1}'
+  line_2_body=echo $line_2 | awk -F':' '{print $2}'
   echo $line_2
   echo $line_2_head $line_2_body
   
-  line_3=$line | awk -F',' '{print $3}'
-  line_3_head=$line_3 | awk -F':' '{print $1}'
-  line_3_body=$line_3 | awk -F':' '{print $2}'
+  line_3=echo $line | awk -F',' '{print $3}'
+  line_3_head=echo $line_3 | awk -F':' '{print $1}'
+  line_3_body=echo $line_3 | awk -F':' '{print $2}'
   echo $line_3
   echo $line_3_head $line_3_body
   
-  line_4=$line | awk -F',' '{print $4}'
-  line_4_head=$line_4 | awk -F':' '{print $1}'
-  line_4_body=$line_4 | awk -F':' '{print $2}'
+  line_4=echo $line | awk -F',' '{print $4}'
+  line_4_head=echo $line_4 | awk -F':' '{print $1}'
+  line_4_body=echo $line_4 | awk -F':' '{print $2}'
   echo $line_4
   echo $line_4_head $line_4_body
 
