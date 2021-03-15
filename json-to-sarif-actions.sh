@@ -19,7 +19,7 @@ cat $json_file_path | while read line || [[ -n ${line} ]];
 do
 
   line=$line | sed 's/[[:space:]]//g' 
-  echo "line"
+  echo "line"$line
   Package_line=$line| jq '.Package'
   Version_line=$line| jq '.Version'
   License_Id_line=$line| jq '.License Id'
