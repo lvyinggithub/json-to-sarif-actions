@@ -29,7 +29,7 @@ do
 
 
   line=$line | sed 's/[[:space:]]//g' 
-  line_1=$line | awk -F ',' '{print $1}'
+  line_1=$line | awk -F',' '{print $1}'
   line_1_head=$line_1 | awk -F':' '{print $1}'
   line_1_body=$line_1 | awk -F':' '{print $2}'
   echo $line_1_head $line_1_body
