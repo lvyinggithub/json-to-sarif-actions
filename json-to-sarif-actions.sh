@@ -16,14 +16,9 @@ json_str=$(cat ${json_file_path} | sed 's/[[:space:]]//g' | sed 's/"/\\"/g' )
 content=""
 tiele=""
 
-ar=( $(cat $json_file_path) )
-for (( i = 0; i < ${#ar[@]}; ++i ));
-do
-  echo "ar[$i] = ${ar[i]}";
-done
 
 
-cat $json_file_path | while read line || [[ -n ${line} ]];
+while read line || [[ -n ${line} ]];
 do
 
   # line=$line | sed 's/[[:space:]]//g' 
@@ -74,7 +69,7 @@ do
   content="Package-string|Version-string|License Id string|License conditions string"
   #tiele= "$line_1_head" "|" "$line_2_head" "|" "$line_3_head" "|" "$line_4_head"$tiele
   #content="$line_1_body" "|" "$line_2_body" "|" "$line_3_body" "|" "$line_4_body"$content
-done<"abc"
+done< cat $json_file_path
 
 
 echo "tiele"$tiele
