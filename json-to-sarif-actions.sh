@@ -28,9 +28,9 @@ do
   # echo "content:"$content
 
   
-  line=echo $line | sed 's/[[:space:]]//g' | sed 's/{//g' |  sed 's/}//g'
+  line=$(echo $line | sed 's/[[:space:]]//g' | sed 's/{//g' |  sed 's/}//g' ) 
   echo $line 
-  line_1=echo $line | awk -F',' '{print $1}'
+  line_1=$(echo $line | awk -F',' '{print $1}')
   echo $line_1 
   
   line_1_head=echo $line_1 | awk -F':' '{print $1}'
