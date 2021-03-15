@@ -64,8 +64,12 @@ do
 
   #tiele=" \n|Package-string|Version-string|License Id string|License conditions string| \n"
   #content=" \n| Package-string|Version-string|License Id string|License conditions string"
-  tiele= $("\n|$line_1_head" "|" "$line_2_head" "|" "$line_3_head" "|" "$line_4_head" "|"  "\n")
-  content=$("\n|" "$line_1_body" "|" "$line_2_body" "|" "$line_3_body" "|" "$line_4_body" $content)
+
+  tiele=   "\" \n"
+ + "|$line_1_head|$line_2_head|$line_3_head|$line_4_head| \n"
+ + "\""
+  content=""\n"
+ + "|" "$line_1_body" "|" "$line_2_body" "|" "$line_3_body" "|" "$line_4_body" $content"
 done< ${json_file_path}
 
 
