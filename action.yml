@@ -16,5 +16,7 @@ outputs:
 runs:
   using: "composite"
   steps: 
-    - run: chmod +x ${{ github.action_path }}/json-to-sarif-actions.sh;${{ github.action_path }}/json-to-sarif-actions.sh  ${{ inputs.json_file_path }} ${{ inputs.licens_sarif_name }}
+  
+    #- run: chmod +x ${{ github.action_path }}/json-to-sarif-actions.sh;${{ github.action_path }}/json-to-sarif-actions.sh  ${{ inputs.json_file_path }} ${{ inputs.licens_sarif_name }}
+    - run: chmod +x ${{ github.action_path }}/json-to-sarif-actions.py;python ${{ github.action_path }}/json-to-sarif-actions.py  ${{ inputs.json_file_path }} ${{ inputs.licens_sarif_name }}
       shell: bash
