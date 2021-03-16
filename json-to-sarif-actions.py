@@ -7,14 +7,23 @@ import json
 import sys
 
 nowDate=time.strftime("%Y-%m-%d", time.localtime())
+if len(sys.argv)!=3:
+  print ("Error,parameter is incorrect.")
+  exit()
+json_file_path=""
+#json_file_path="./license-go.json"
+licens_sarif_name=""
+
+
+json_file_path = sys.argv[1]
+licens_sarif_name = sys.argv[2]
 
 
 head = 0
 content=""
-file_path=""
-file_path="./license-go.json"
+
 sarif_file_content=""
-with open(file_path, 'r') as file:
+with open(json_file_path, 'r') as file:
     for line in file:
         #if head != 0:
         #print (line);
@@ -79,6 +88,6 @@ print(head)
 sarif_file_content = '{ "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.4.json", "version": "2.1.0", "runs": [ { "tool": { "driver": { "name": "dep-scan", "fullName": "dep-scan-tools", "version": "0.0.0", "semanticVersion": "0.0.0", "dottedQuadFileVersion": "0.0.0.0", "rules": [ { "id": "dep-scan-1", "shortDescription": { "text": "dep-san title" }, "fullDescription": { "text": "dep-san full description" }, "help": { "text": \\n", "markdown": "**dep-scan-results**\\n| '+tiele+ '| \\n| --- | --- | --- | --- | \\n|'+content+'|\\n" } } ] } }, "logicalLocations": [ { "name": "dockerfile", "fullyQualifiedName": "dockerfile", "kind": "namespace" } ], "results": [ { "ruleId": "dep-scan-1", "ruleIndex": 0, "level": "error", "message": { "text": "xx.sarif", "id": "default" }, "analysisTarget": { "uri": "xx.sarif" }, "locations": [ { "physicalLocation": { "artifactLocation": { "uri": "xx.sarif" }, "region": { "startLine": 1, "startColumn": 1, "endLine": 1, "endColumn": 1, "byteOffset": 1, "byteLength": 1 } }, "logicalLocations": [ { "fullyQualifiedName": "dockerfile" } ] } ], "suppressions": [ { "kind": "external" } ], "baselineState": "unchanged" }, { "ruleId": "dep-scan-1", "ruleIndex": 0, "level": "error", "message": { "text": "The path xx.sarif ", "id": "default" }, "analysisTarget": { "uri": "xx.sarif" }, "locations": [ { "physicalLocation": { "artifactLocation": { "uri": "xx.sarif" }, "region": { "startLine": 1, "startColumn": 1, "endLine": 1, "endColumn": 1, "byteOffset": 1, "byteLength": 1 } }, "logicalLocations": [ { "fullyQualifiedName": "dockerfile" } ] } ], "suppressions": [ { "kind": "external" } ], "baselineState": "unchanged" } ], "columnKind": "utf16CodeUnits" } ] }'
 
 # coding=UTF-8
-filename = './1.sarif'
-with open(filename, 'w') as file_object:
+#licens_sarif_name = './1.sarif'
+with open(licens_sarif_name, 'w') as file_object:
     file_object.write(sarif_file_content.strip())
