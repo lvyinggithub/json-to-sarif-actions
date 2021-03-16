@@ -29,10 +29,8 @@ jobs:
       - name: ls
         run: ls -l
       - name: cat
-        run: cat ./test-table.sarif
+        run: cat ./test-table-2.sarif
       - name: upload  scan SARIF report
         uses: github/codeql-action/upload-sarif@v1
         with:
-          #sarif_file: ./test-table.sarif
-          #sarif_file: ./update-table.sarif
           sarif_file: ./test-table-2.sarif
