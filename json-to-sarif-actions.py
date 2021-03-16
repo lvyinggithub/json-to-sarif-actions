@@ -6,7 +6,7 @@ import os
 import json
 import sys
 #nowDate=1
-nowDate=time.strftime("%Y-%m-%d-%h-%m-%s", time.localtime())
+nowDate=time.strftime("%Y-%m-%d-%h-%m", time.localtime())
 if len(sys.argv)!=3:
   print ("Error,parameter is incorrect.")
   exit()
