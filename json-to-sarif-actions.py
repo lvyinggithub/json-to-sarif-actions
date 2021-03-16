@@ -93,3 +93,4 @@ sarif_file_content = '{ "$schema": "https://schemastore.azurewebsites.net/schema
 
 with open(licens_sarif_name, 'w') as file_object:
     file_object.write(sarif_file_content.strip())
+
