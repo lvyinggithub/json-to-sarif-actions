@@ -32,4 +32,4 @@ jobs:
       - name: upload  scan SARIF report
         uses: github/codeql-action/upload-sarif@v1
         with:
-          sarif_file: ./test-table-2.sarif
+          sarif_file: ./5.sarif
